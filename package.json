@@ -1,0 +1,30 @@
+{
+  "name": "monpremierserveurnode",
+  "version": "1.0.0",
+  "description": "Je créer mon premier serveur sur Node.Le but est d'apprendre à gérer les requêtes http.",
+  "keywords": [
+    "serveur",
+    "node",
+    "Javascript"
+  ],
+  "homepage": "https://github.com/djoemahamoudou-arch/monpremierserveurnode#readme",
+  "bugs": {
+    "url": "https://github.com/djoemahamoudou-arch/monpremierserveurnode/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djoemahamoudou-arch/monpremierserveurnode.git"
+  },
+  "license": "ISC",
+  "author": "Mahamoudou Rachid",
+  "type": "commonjs",
+  "main": "serveur.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
+
+
