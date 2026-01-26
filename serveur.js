@@ -10,8 +10,11 @@ const app = require('./app')
 
 const server = http.createServer(app);
 
+const numPort = 3200;
+
+
 //Je configure le numero du port utilisé dans le serveur 
-app.set('port', 3000);
+app.set(numPort);
 
 
 
@@ -25,8 +28,8 @@ const heure = new Date();
 });*/
 
 // Je précise qu'elle adresse et le port du serveur 
-server.listen(3000, ()=> {
-    console.log("le serveur tourne sur le port 3000");
+server.listen(numPort, ()=> {
+    console.log("Le serveur tourne sur le port :",numPort);
     console.log(date.toLocaleDateString(), heure.toLocaleTimeString());
 });
 
