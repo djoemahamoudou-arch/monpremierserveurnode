@@ -43,6 +43,26 @@ app.use('/api/fruit',(req,res,next) => {
     
 
 });
+// J'ajoute un middleware qui gère la sécurité d'accès
+app.use((req,res,next)=>{
+
+
+    //Je permet l'accès à mon API depuis n'import quel origin (a partir de mon serveur que j'ai crèer.)
+    res.setHeader('Access-control-Allow-Origin' , '*');
+  
+   
+    // J'autorise certaines en-têtes dans les requêtes reçues dans notre API.Les en-têtes autorisées sont :('origin, X-Requested-with,Content , Accept,content-type,Authorization).
+    res.setHeader('Access-control-Allow-Hearders' , 'Origin,X-Requested-With,Content,Accept, Content-Type,Authorization');
+
+
+
+    //J'autorise d'envoyer des requêtes avec les méthodes :'GET,POST,PUT,DELETE,PATCH,OPTION'
+    res.setHeader('Acess-Control-Allow-Methods','GET,POST,PUT,DELETE,PATCH,OPTION');
+    
+    next();
+});
+
+
 
 app.use('/api/fruit',(req,res) => {
     console.log("Je passe dans la route /api/fruit");
@@ -53,15 +73,23 @@ app.use('/api/fruit',(req,res) => {
             nom:"pomme",
             descrption: "fruit saisonner rieche en vitamine c",
             prix:3
+        },
+
+       
+        {
+            id:2,
+            nom:"feliki",
+            description:"feuille ",
+            prix:1,
         }
-
-
 
 
 
         
     ];
-    res.json(fruit);
+
+    // le (200) , c'est pour dire que je suis content.
+    res.status(200).json(fruit);
 
 });
 
