@@ -64,7 +64,7 @@ app.use((req,res,next)=>{
 
 
 
-app.use('/api/fruit',(req,res) => {
+app.get('/api/fruit',(req,res) => {
     console.log("Je passe dans la route /api/fruit");
     // mon fruit
     const fruit = [
@@ -92,6 +92,59 @@ app.use('/api/fruit',(req,res) => {
     res.status(200).json(fruit);
 
 });
+
+
+
+
+// J'ai fait avec la methode POST
+
+
+app.post('/api/fruit',(req,res,) =>{
+    console.log("mon route internationale");
+    const legume = [
+       {
+        nom:"fruitapain",
+        descriptions : "mangavou",
+        prix:3
+
+
+
+
+       } 
+
+
+
+
+    ];
+    res.status(201).json(legume);
+
+
+   
+  
+
+})
+
+
+
+
+
+app.put('/api/fruit',(req,res)=>{
+
+    const vegetation = [
+        {
+            nom : "dipeh",
+            descripton:"nguanom",
+            prix:5
+        }
+    ];
+
+    res.status(200).json(vegetation);
+});
+
+
+
+
+
 
 
 // J'export l'application express sous forme de module
